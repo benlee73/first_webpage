@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-------------- head -------------->
+<!-- sytle, script, CSS link,     -->
+<!-- favicon, meta data 등을 작성 -->
+<!---------------------------------->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>2020년을 보내며</title>
 
+    <!-- favicon -->
     <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/christmas-46/64/christmas-icon-tree-512.png">
 
+    <!-- font 등록 -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Poor+Story&display=swap"
         rel="stylesheet">
 
-    <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script></script>
+    <!-- 화면에 눈 내리는 효과 -->
+    <script src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/snow.js"></script>
 
+    <!-- 링크 보냈을 때 나오는 화면과 문구 -->
     <meta property="og:image" content="https://www.buckinghamtahoerentals.com/wp-content/uploads/2018/12/christmas-800x400.jpg">
     <meta property="og:title" content="희준이의 카드">
     <meta property="og:description" content="2020을 추억하며">
 
-
-    <style>
-        * {
+    <!----------------->
+    <!------ CSS ------>
+    <!----------------->
+    <style>        
+        * { /* 전체 font 설정 */
             font-family: 'Nanum Brush Script', cursive;
             font-family: 'Poor Story', cursive;
         }
 
-        body {
+        body { /* 전체 화면의 색 */
             background-color: #9b070f;
         }
 
-        .envelope {
+        .envelope { /* 편지 */
             width: 200px;
             height: 200px;
 
@@ -42,23 +53,23 @@
             cursor: pointer;
         }
 
-        .envelope-msg {
+        .envelope-msg { /* 편지 아래 text */
             color: white;
             text-align: center;
         }
 
-        .letter-close {
+        .letter-close { /* 편지 열기 전의 화면 */
             display: block;
         }
-        .letter-open {
+        .letter-open { /* 편지 열고난 후의 화면*/
             display:none;
         }
 
-        .rtan {
-            background-color: white;
+        .rtan { /* 르탄 캐릭터 화면 */
             width: 200px;
             height: 200px;
 
+            background-color: white;
             background-image: url('https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/xmas/Webp.net-gifmaker+(1).gif');
             background-size: cover;
             background-position: center;
@@ -70,14 +81,16 @@
             box-shadow: 0px 0px 10px 0px white;
         }
 
-        h1 {
-            margin-top: 30px;
+        h1 { /* 편지 제목 */
             color: white;
             text-align: center;
+            margin-top: 30px;
         }
 
-        .msgbox {
+        .msgbox { /* 편지 내용 */
             width: 400px;
+            /* height는 자동 설정됨 */
+
             background-color: ivory;
 
             margin: auto;
@@ -90,12 +103,12 @@
             box-shadow: 0px 0px 10px 0px white;
         }
 
-        .from {
+        .from { /* 편지 출처 */
             text-align: right;
             margin-bottom: 0px;
         }
 
-        @media screen and (max-width: 760px) {
+        @media screen and (max-width: 760px) { /* 모바일 환경시 화면 */
             .msgbox {
                 width: 300px;
                 padding: 20px;
@@ -111,23 +124,33 @@
         }
     </style>
 
+    <!---------------->
+    <!-- JavaScript -->
+    <!---------------->
     <script>
-        function open_letter() {
+        function open_letter() { // 편지 열기
             document.getElementsByClassName("letter-close")[0].style.display = 'none'
             document.getElementsByClassName("letter-open")[0].style.display = 'block'            
         }
-        function go_rtan() {
+        function go_rtan() { // 스파르타코딩클럽 사이트로 이동
             alert('앗, 어떻게 찾았지!');
             window.location.href="https://online.spartacodingclub.kr/";
         }
     </script>
+
 </head>
 
+<!------------ body ------------>
+<!-- 화면에 출력할 것들을 작성 --->
+<!------------------------------>
 <body>
-    <div class="letter-close">
+    <!-- 편지 열기 전의 화면 -->
+    <div class="letter-close"> 
         <div class="envelope" onclick="open_letter()"></div>
         <h2 class="envelope-msg">봉투를 열어봐</h2>
     </div>
+
+    <!-- 편지 열고 난 후의 화면 -->
     <div class="letter-open">
         <div class="rtan" onclick="go_rtan()"></div>
         <h1>2020년 수고 많았어!</h1>
@@ -140,6 +163,7 @@
             <p class="from">2020.12.25 희준이가</p>
         </div>
     </div>
+
 </body>
 
 </html>
